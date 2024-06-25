@@ -26,11 +26,17 @@ export default function ChapterPage({ params }: { params: any }) {
   const nextChapter = parseInt(chapter as string) + 1
 
   const lastElementRef = useCallback(
-    (node) => {
+    (node: HTMLDivElement | null) => {
       if (observer.current) observer.current.disconnect()
       observer.current = new IntersectionObserver(
         (entries) => {
-          if (entries[0].isIntersecting && nextChapter <= book.chapters && isObserverActive) {
+          if (
+            book &&
+            book.chapters &&
+            entries[0].isIntersecting &&
+            nextChapter <= book.chapters &&
+            isObserverActive
+          ) {
             setTimeout(() => {
               router.push(`/book/${slug}/chapter/${nextChapter}`)
             }, 400)
@@ -42,7 +48,7 @@ export default function ChapterPage({ params }: { params: any }) {
       )
       if (node) observer.current.observe(node)
     },
-    [nextChapter, book.chapters, router, slug, isObserverActive]
+    [book, nextChapter, isObserverActive, router, slug]
   )
 
   useEffect(() => {
@@ -76,7 +82,7 @@ export default function ChapterPage({ params }: { params: any }) {
         <p>
           <Markdown>{text}</Markdown>
         </p>
-        {chapter < book.chapters ? (
+        {book && book.chapters && chapter < book.chapters ? (
           <>
             <Button asChild>
               <Link className="not-prose" href={`/book/${slug}/chapter/${nextChapter}`}>
