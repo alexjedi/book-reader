@@ -15,7 +15,7 @@ export default function BookPage({ params }: { params: any }) {
   return (
     <main className="w-screen flex flex-col items-center">
       <HeaderContent backLink={`/`} />
-      <article className="prose prose-base lg:prose-lg w-full prose-p:text-gray-900 p-4 lg:p-8">
+      <article className="prose dark:prose-invert prose-lg w-full prose-p:text-primary p-4 lg:p-8">
         <img
           src={`/img/${book.cover}`}
           alt={book.name}
