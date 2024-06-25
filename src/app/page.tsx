@@ -9,13 +9,14 @@ import { BookPreview } from '@/components/BookPreview'
 import { AudioEmpty } from '@/components/AudioEmpty'
 import { Sidebar } from '@/components/Sidebar'
 import { playlists } from '@/data/playlists'
-import { PlusCircleIcon } from 'lucide-react'
+import { Play, PlusCircleIcon } from 'lucide-react'
 import { booksList } from '@/data/books'
 import { Separator } from '@/components/ui/separator'
 import Header from '@/components/Header'
+import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Book Catalog',
+  title: 'Book Reader',
   description: 'Example of a book catalog page.',
 }
 
@@ -38,9 +39,11 @@ export default function BooksPage() {
                 </TabsTrigger>
               </TabsList>
               <div className="ml-auto">
-                <Button>
-                  <PlusCircleIcon className="mr-2 h-4 w-4" />
-                  Add books
+                <Button asChild>
+                  <Link href={'/book/into_the_lethe/chapter/1'}>
+                    Continue Reading
+                    <Play className="ml-2 h-4 w-4" />
+                  </Link>
                 </Button>
               </div>
             </div>
@@ -70,9 +73,9 @@ export default function BooksPage() {
             >
               <div className="flex items-center justify-between">
                 <div className="space-y-1">
-                  <h2 className="text-2xl font-semibold tracking-tight">New Episodes</h2>
+                  <h2 className="text-2xl font-semibold tracking-tight">New Chapters</h2>
                   <p className="text-sm text-muted-foreground">
-                    Your favorite audio. Updated daily.
+                    Your favorite audiobooks. Updated daily.
                   </p>
                 </div>
               </div>

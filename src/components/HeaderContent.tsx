@@ -15,7 +15,7 @@ import { useTheme } from 'next-themes'
 import { Button } from './ui/button'
 import Link from 'next/link'
 
-const HeaderContent = () => {
+const HeaderContent = ({ backLink }: { backLink: string }) => {
   const { theme, setTheme } = useTheme()
 
   const toggleTheme = () => {
@@ -23,10 +23,10 @@ const HeaderContent = () => {
   }
 
   return (
-    <header className="w-full flex h-20 items-center justify-between">
+    <header className="w-full flex h-20 items-center justify-between px-4 lg:px-6">
       <div className="flex space-x-3 items-center">
         <Button variant="outline" size="icon" asChild>
-          <Link href="/">
+          <Link href={backLink}>
             <ArrowLeft size={20} />
           </Link>
         </Button>

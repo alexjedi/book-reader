@@ -30,29 +30,29 @@ export function AudioEmpty() {
           <path d="M17 18.5a9 9 0 1 0-10 0" />
         </svg>
 
-        <h3 className="mt-4 text-lg font-semibold">No episodes added</h3>
+        <h3 className="mt-4 text-lg font-semibold">No chapters added</h3>
         <p className="mb-4 mt-2 text-sm text-muted-foreground">
-          You have not added any podcasts. Add one below.
+          You have not added any audiobooks. Add one below.
         </p>
         <Dialog>
           <DialogTrigger asChild>
             <Button size="sm" className="relative">
-              Add Podcast
+              Add an audiobook
             </Button>
           </DialogTrigger>
           <DialogContent>
             <DialogHeader>
-              <DialogTitle>Add Podcast</DialogTitle>
-              <DialogDescription>Copy and paste the podcast feed URL to import.</DialogDescription>
+              <DialogTitle>Add Audiobook</DialogTitle>
+              <DialogDescription>Copy and paste the audiobook URL to import.</DialogDescription>
             </DialogHeader>
             <div className="grid gap-4 py-4">
               <div className="grid gap-2">
-                <Label htmlFor="url">Podcast URL</Label>
+                <Label htmlFor="url">Audiobook URL</Label>
                 <Input id="url" placeholder="https://example.com/feed.xml" />
               </div>
             </div>
             <DialogFooter>
-              <Button>Import Podcast</Button>
+              <Button>Import Audiobook</Button>
             </DialogFooter>
           </DialogContent>
         </Dialog>

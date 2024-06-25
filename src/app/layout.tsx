@@ -4,6 +4,7 @@ import './globals.css'
 import { cn } from '@/lib/utils'
 import { Toaster } from '@/components/ui/toaster'
 import { ThemeProvider } from '@/components/ThemeProvider'
+import Transition from './transition'
 
 const fontSans = FontSans({
   subsets: ['latin'],
@@ -11,8 +12,8 @@ const fontSans = FontSans({
 })
 
 export const metadata: Metadata = {
-  title: 'Magnetic Wapper',
-  description: 'Copy and Paste magic effect ✨',
+  title: 'Book Reader',
+  description: 'A book reader app with a catalog of books',
 }
 
 export default function RootLayout({
@@ -34,7 +35,7 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          {children}
+          <Transition>{children}</Transition>
         </ThemeProvider>
         <Toaster />
       </body>
