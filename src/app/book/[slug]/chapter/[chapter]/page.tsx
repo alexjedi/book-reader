@@ -73,7 +73,7 @@ export default function ChapterPage({ params }: { params: any }) {
   return (
     <main className="w-screen flex flex-col items-center">
       <HeaderContent backLink={`/book/${slug}`} />
-      <article className="prose dark:prose-invert prose-base lg:prose-lg w-full prose-p:text-primary p-4 lg:p-8">
+      <article className="prose dark:prose-invert prose-lg w-full prose-p:text-primary p-4 lg:p-8">
         <img
           src={`/books/${slug}/chapter_${chapter}.png`}
           alt={book.name}
